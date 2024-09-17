@@ -1,0 +1,54 @@
+body {
+    width: 100%;
+}
+.container {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 로그인 페이지 */
+.titleIcon {
+    display: block;
+    margin: 50px auto 30px;
+    width: 250px;
+    height: 294px;
+
+}
+.login-form {
+    display:grid;
+    place-items: center;
+}
+.login-form input {
+    box-sizing: border-box;
+    border: 1px solid #A7A7A7;
+    border-radius: 30px;
+    height: 40px;
+    width: 300px;
+    margin: 10px;
+    transition: border-color 0.4s linear;
+    padding: 0 10px;
+}
+.login-form input:focus {
+    outline: none;
+    border-color: #3F6ABE;
+    border-width: 2px;
+}
+.login-form input::placeholder {
+    color: #A7A7A7;
+}
+.login-form button {
+    border: none;
+    height: 40px;
+    width: 300px;
+    border-radius: 30px;
+    margin: 10px;
+    background-color: #A7A7A7;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    transition: background-color .2s linear;
+}
+.login-form button.active {
+    background-color: #3F6ABE;
+}
