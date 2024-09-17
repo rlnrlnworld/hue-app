@@ -8,10 +8,21 @@ export default class Home extends Component {
                 <img src="https://i.imgur.com/E7Cyqw7.png">
             </div>
             <form class="login-form">
-                <input id="works" placeholder="기관">
-                <input id="userId" placeholder="아이디">
-                <input id="userPwd" placeholder="비밀번호" type="password">
-                <button type="submit" disabled>로그인</button>
+                <div class="input-wrapper">
+                    <input id="works" placeholder=" " required>
+                    <label for="works">기관</label>
+                </div>
+                <div class="input-wrapper">
+                    <input id="userId" placeholder=" " required>
+                    <label for="userId">아이디</label>
+                </div>
+                <div class="input-wrapper">
+                    <input id="userPwd" placeholder=" " type="password" required>
+                    <label for="userPwd">비밀번호</label>
+                </div>
+                <div class="input-wrapper">
+                    <button type="submit" disabled>로그인</button>
+                </div>
             </form>
         `
 
