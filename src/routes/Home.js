@@ -15,10 +15,12 @@ export default class Home extends Component {
                 <div class="input-wrapper">
                     <input id="userId" placeholder=" " required>
                     <label for="userId">아이디</label>
+                    <span class="error" id="userIdError" style="display:none;">아이디 형식에 맞게 입력해주세요.</span>
                 </div>
                 <div class="input-wrapper">
                     <input id="userPwd" placeholder=" " type="password" required>
                     <label for="userPwd">비밀번호</label>
+                    <span class="error" id="userPwdError" style="display:none;">비밀번호는 8자 이상이어야 합니다.</span>
                 </div>
                 <div class="input-wrapper">
                     <button type="submit" disabled>로그인</button>
@@ -30,9 +32,17 @@ export default class Home extends Component {
         const idInput = this.el.querySelector('#userId')
         const pwdInput = this.el.querySelector('#userPwd')
         const logInBtn = this.el.querySelector('button')
+        const userIdError = this.el.querySelector('#userIdError')
+        const userPwdError = this.el.querySelector('#userPwdError')
 
         const checkInputs = () => {
-            if (workInput.value && idInput.value && pwdInput.value ) {
+            const isIdValid = /^[A-Za-z]+$/.test(idInput.value);
+            const isPwdValid = pwdInput.value.length >= 8;
+
+            userIdError.style.display = isIdValid || idInput.value === '' ? 'none' : 'block';
+            userPwdError.style.display = isPwdValid || pwdInput.value === '' ? 'none' : 'block';
+
+            if (workInput.value && isIdValid && isPwdValid) {
                 logInBtn.classList.add('active')
                 logInBtn.disabled = false
             } else {
