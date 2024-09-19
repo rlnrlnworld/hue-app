@@ -54,5 +54,12 @@ export default class Home extends Component {
         workInput.addEventListener('input', checkInputs)
         idInput.addEventListener('input', checkInputs)
         pwdInput.addEventListener('input', checkInputs)
+
+        logInBtn.addEventListener('click', e => {
+            e.preventDefault()
+
+            // 사용자 정보 확인 메소드 구현 예정
+            window.location.hash = `/dashboard`
+        })
     }
 }
